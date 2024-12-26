@@ -3,9 +3,10 @@ let appref='dictcyhtml';
 </script>
 <style>
 textarea {font-family:Times New Roman;font-size:70%;padding:5px;margin:0px;}
-button {height:30px;font-family:Times New Roman;font-size:70%;padding-left:2px;padding-right:2px;}
+button {height:15px;font-family:Times New Roman;font-size:70%;padding-left:2px;padding-right:2px;}
 select {font-family:Times New Roman;font-size:70%;}
 body {font-family:Times New Roman;font-size:70%;}
+.btndict {background-color:#ffffdd;border:1px solid gray;border-radius:4px;}
 </style>
 <script src='../../jsproj/txutilsjs/txutils.js'></script>
 <meta charset='UTF-8'/>
@@ -15,37 +16,20 @@ body {font-family:Times New Roman;font-size:70%;}
 <b>
 github.com/ianlow27/dictcyhtml
 </b>
-- 0.0.2_241224-1814 
+- 0.0.3_241226-1341
 |dictcyhtml provides dictionary lookup and related facilities for words to and from Welsh
 |Author: Ian Low
 |Copyright (c) 2024 Ian Low
 |Usage Rights: MIT License
 <br/>
 <select id='selfiles' onchange='selfile();'>
-</select><br/>
+</select>
 <span id='spstatus' style='color:blue;'></span>
 <br/>
 <!-- ================================= -->
-<table width='96%'>
-<tr>
-<td width='50%' valign='top'>
-<textarea id='tx1' style='width:92%;height:70px;'></textarea>
-<textarea id='tx2' style='width:92%;height:70px;'></textarea>
-</td>
-<td width='50%' valign='top'>
-<textarea id='tx3' style='width:92%;height:70px;'></textarea>
-<textarea id='tx4' style='width:92%;height:70px;'></textarea>
-</td>
-</tr>
-</table>
-
-
-<!-- ================================= --><br/>
-
-<button id='btrdict' onclick='dict();'>Dict</button>
-<script src='./dictcy.js'></script>
-
-<hr/>
+<textarea id='tx1' style='xmargin-top:-10px;resize:none;overflow-y:auto;width:92%;max-height:70px;height:70px;
+  -webkit-overflow-scrolling: touch;'></textarea>
+<div style='margin-top:-4px;margin-bottom:-4px;'>
 <button id='btrgxrpl' onclick='rgxreplace();'>Rgx Replace</button>
 <button id='btsort' onclick='sorttext();'>Sort</button>
 <button id='btcopy' onclick='copy2clipbrd();'>Copy</button>
@@ -54,7 +38,45 @@ github.com/ianlow27/dictcyhtml
 <button id='btnewfile' onclick='newfile();'>New File</button>
 <button id='btnrnmfile' onclick='renamefile();'>Rename File</button>
 <button id='btdelfile' onclick='delfile();'>Delete File</button>
+</div>
+<table width='96%'>
+<tr>
+<td width='60%' valign='top'>
+<textarea id='tx2' class='btndict' style='width:92%;height:70px;'></textarea>
+<textarea id='tx3' style='width:92%;height:50px;'></textarea>
+</td>
+<td width='40%' valign='top'>
+<textarea id='tx4' style='width:92%;height:70px;'></textarea>
+<textarea id='tx5' style='width:92%;height:50px;'></textarea>
+</td>
+</tr>
+</table>
+
+<!-- ================================= -->
+<div style='margin-top:-7px;margin-bottom:-6px;'> 
+<button class='btndict' id='btrdict' onclick='dict("2cy");'>Dict2CY</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>Dict2EN</button>
+<button class='btndict' id='btrdict' onclick='cleandict("finddups");'>FindDups</button>
+<button class='btndict' id='btrdict' onclick='cleandict("newdict");'>NewDict</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+</div>
+
+<pre id='pr1'><pre>
+
+<script src='./dictcy.js'></script>
+<script src='./correctns.js'></script>
 <script>
+
+alert(acorrectns.length);
+alert(adictcy.length);
 resize2device();
 //localStorage.removeItem(appref+'_new4');
 //localStorage.setItem(appref+'_currfile','new1');
@@ -67,6 +89,8 @@ const tx1=document.getElementById('tx1');
 const tx2=document.getElementById('tx2');
 const tx3=document.getElementById('tx3');
 const tx4=document.getElementById('tx4');
+const tx5=document.getElementById('tx5');
+const pr1=document.getElementById('pr1');
 const spstatus=document.getElementById('spstatus');
 const selfiles=document.getElementById('selfiles');
 popselfiles();
@@ -78,16 +102,35 @@ restoretext();
 tx2.value=localStorage.getItem(appref+'_tx2');
 tx3.value=localStorage.getItem(appref+'_tx3');
 tx4.value=localStorage.getItem(appref+'_tx4');
+tx5.value=localStorage.getItem(appref+'_tx5');
 setInterval('savetext();', 3*20*1000);
+cleandict('newdict','onload');
 //-------------------------------------------
+function runmsg(popt){
+  const dtnow = new Date();
+  spstatus.innerHTML=popt+' '+dtnow.toISOString();
+}//endfunc
 //-------------------------------------------!!
-function dict(){
+function dict(popt){//!!
+runmsg('started');
 localStorage.setItem(appref+'_tx1', tx1.value);
 localStorage.setItem(appref+'_tx2', tx2.value);
 localStorage.setItem(appref+'_tx3', tx3.value);
 localStorage.setItem(appref+'_tx4', tx4.value);
+localStorage.setItem(appref+'_tx5', tx5.value);
 let strout='';
+if(tx1.value.length > 2000){
+  runmsg('stopped');
+  alert('tx1 is too large!');
+  return;
+}
 const awords=tx1.value.split(/\s/);
+let colsrc=1;
+let coltgt=2;
+  if(popt=='2en'){
+    colsrc=2;
+    coltgt=1;
+  }
   for(i in awords){
     //alert(awords[i]);
     //const rgx=RegExp("/\|"+awords[i]+"\|/");
@@ -95,10 +138,10 @@ const awords=tx1.value.split(/\s/);
     let fndwds='';
     for(j in adictcy){
       const atmp1=adictcy[j].split(/\|/);
-      if(atmp1[1]==awords[i]){
+      if(atmp1[colsrc]==awords[i]){
         if(fndwds=='') fndwds+='=';
         else fndwds+='/';
-        fndwds+=''+atmp1[3]+'('+atmp1[2]+')'; //alert(atmp1[1]+'____'+awords[i]+'___'+adictcy[j]);
+        fndwds+=''+atmp1[coltgt]+'('+atmp1[3]+')';//!! alert(atmp1[1]+'____'+awords[i]+'___'+adictcy[j]);
       }else {
              // strout+=' ';
       }
@@ -107,7 +150,124 @@ const awords=tx1.value.split(/\s/);
   }//endfor
  tx2.value= strout;
  localStorage.setItem(appref+'_tx2', tx2.value);
-} 
+ runmsg('completed');
+}//endfunc
+//-------------------------------------------
+/* popts=finddups/newdict */
+function cleandict(popt, popt2=''){
+runmsg('started');
+let prv1='';
+let prv2='';
+let prv3='';
+let strout='';
+let anewdict=Array();
+let adict2=Array();
+  if(popt=='newdict'){
+    let atmp1=Array();
+    if(popt2=='onload'){
+      atmp1=acorrectns;
+    }else {
+      atmp1=tx1.value.split(/\n/);
+    }
+    for(let i in atmp1){
+      const atmp2=atmp1[i].split(/#/);
+      if(String(atmp2[1]).trim()){
+        anewdict[atmp2[0]]=atmp2[1];
+      }
+      //if(i>20) break;
+    }//endfor
+    //alert(anewdict.length);
+    strout+='const adictcy  = [\n';
+  }//endif
+  //alert(1);
+  let count=0;
+  for(let i in adictcy){
+    count++;
+    if(!(count%10000)){
+      alert(count+' of '+adictcy.length);
+      //if(count>10000) break;
+    }
+    if(popt=='finddups'){
+      let atmp1=adictcy[i].split(/\|/);
+      if(i){
+        if((prv1==atmp1[1])&&(prv2==atmp1[2])){
+         strout+=adictcy[i-1]+"\n";
+         strout+=adictcy[i]+"\n" 
+        }//endif
+      }
+      prv1=atmp1[1];
+      prv2=atmp1[2];
+      prv3=atmp1[3];     
+    }else if(popt=='newdict'){
+      let bfound=false;
+      for(let j in anewdict){
+        if((j+'#')==adictcy[i]){
+          bfound=true;
+          let atmp3=anewdict[j].split(/\//);
+          let bincl=true;
+          if(atmp3[0]=='x'){
+            bincl=false;
+            //alert(j);
+          }
+          if(bincl){
+            let atmp4=adictcy[i].split(/\|/);
+            for(let k in atmp3){
+              if(atmp3[k].match(/>/)){
+                const atmp5=atmp3[k].split(/>/);
+                atmp4[Number(atmp5[0])]=atmp5[1];
+              }else{
+              }//endif
+            }//endfor
+            let str1='';
+            for(let k in atmp4){
+              if(str1!='') str1+='|';
+              str1+=atmp4[k];
+            }//endfor
+            //alert(str1+'#');
+            if(popt2=='onload'){
+              adict2.push(str1);
+            }else {
+              strout+='"'+str1+'",\n';
+            }
+          }//endif
+//alert(j+'');
+        }
+      }//endfor
+      if(!bfound){
+        if(popt2=='onload'){
+          adict2.push(adictcy[i]);          
+        }else {
+          strout+='"'+adictcy[i]+'",\n';
+        }
+      }//endif
+    }//endif
+//if(i>5)break;
+  }//endfor
+  if(popt=='finddups'){
+    tx2.value=strout;
+  }else if(popt=='newdict'){
+    strout+='""];\n';
+    strout+='const dictcyjs_loaded=true;\n';
+    strout+='if(dictcyjs_loaded){ console.log(dictcyjs["54433"]);\n';
+    strout+='}\n';
+   // pr1.innerHTML=strout;
+    //alert(strout.substr(0,10));
+    //alert(strout.substr(10,20));
+    //alert(strout.substr(20,30));
+    if(popt2=='onload'){    
+      adictcy=adict2;
+    }else {    
+      tx2.value=strout; //.substr(0,5000);
+    }
+    //copy2clipboard(tx2);
+  }//endif
+
+  runmsg('completed');
+}//endfunc
+//-------------------------------------------
+//-------------------------------------------
+//-------------------------------------------
+//-------------------------------------------
 //-------------------------------------------
 function sorttext(){
   if(promptyn('Do you want to sort this file?  - '+fname)!='y') return 0;
@@ -173,6 +333,7 @@ bautosave=false;
     alert(e.message);
   }
 }//endfunc
+//-----------------------------------------
 function rev2strorig(){
     try{
   //tx1.value='';
@@ -299,7 +460,7 @@ for(i in alines){
   if(typeof argx[1] == 'undefined') return -1;
   lrepl = argx[1];
   let str1 = tx1.value;
-  const rgx = new RegExp(argx[0], 'g');
+  const rgx = new RegExp(argx[0], 'mg');
   tx1.value = str1.replace(rgx, argx[1]);
 }//endfor
 }//endfunc
