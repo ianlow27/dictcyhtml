@@ -1,7 +1,10 @@
 <!DOCTYPE html><html><head><script>
 let appref='dictcyhtml';
+let bcleandictonload=0;
 </script>
 <style>
+xxspan {padding:1px;height:16px;font-size:120%;}
+pre  {white-space:pre-wrap;font-size:70%;word-wrap:break-word;margin:0px;padding:0px;width:98%;}
 textarea {font-family:Times New Roman;font-size:70%;padding:5px;margin:0px;}
 button {height:15px;font-family:Times New Roman;font-size:70%;padding-left:2px;padding-right:2px;}
 select {font-family:Times New Roman;font-size:70%;}
@@ -10,25 +13,384 @@ body {font-family:Times New Roman;font-size:70%;}
 </style>
 <script src='../../jsproj/txutilsjs/txutils.js'></script>
 <meta charset='UTF-8'/>
-<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' />
+<meta name='viewport' content='width=device-width, initial-scale=1, xmaximum-scale=1.0, xuser-scalable=0' />
 </head>
 <body>
 <b>
 github.com/ianlow27/dictcyhtml
 </b>
-- 0.0.3_241226-1341
+- 0.0.4_241231-1837 
 |dictcyhtml provides dictionary lookup and related facilities for words to and from Welsh
 |Author: Ian Low
 |Copyright (c) 2024 Ian Low
 |Usage Rights: MIT License
 <br/>
+
+<details style='margin:0px;padding:0px;'>
+  <summary>Lliwiau  </summary>
+  <br/><br/><br/><br/>
+  <br/><br/><br/><br/>
+  <div style='margin-bottom:1000px;margin-top:1000px;padding:0px;xtransform:scale(0.3);'>
+  
+  <span style='xborder-radius:4px;font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#c0c0c0;'>arian</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#daa520;'>cethin</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#663399;'>clais</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff0000;'>coch</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#000000;'>du</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f5deb3;'>dwn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#d2691e;'>gell</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#0000ff;'>glas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffd700;'>gwefr</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#800000;'>gwin</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#8b4513;'>gwinau</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#a0522d;'>gwrm</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffffff;'>gwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#008000;'>gwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#778899;'>llai</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#708090;'>llwch</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#808080;'>llwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#deb887;'>llyg</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffff00;'>melyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#696969;'>mwg</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#9370db;'>piws</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#b22222;'>rhudd</span>
+
+<hr/>
+
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#4b0082;'>cleisddu</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#8b0000;'>cochddu</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffa500;'>cochfelyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffa07a;'>cochfelynliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#800080;'>cochlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#da70d6;'>cochwynborffor</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#bc8f8f;'>cochwynlwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#556b2f;'>duddwnwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#000080;'>dulas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#b0c4de;'>dulaswelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#006400;'>duwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f4a460;'>dwnell</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f0e68c;'>dwnfelyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#eee8aa;'>dwnwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#808000;'>dwnwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff7f50;'>erchgochfelyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#db7093;'>erchgochwynliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#8a2be2;'>glasborffor</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#191970;'>glasddu</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#0000cd;'>glasliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#b0e0e6;'>glaswelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#87ceeb;'>glaswyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:undefined;'>glaswynwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#afeeee;'>glaswyrddwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#00bfff;'>gloywburlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff69b4;'>gloywgochwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#00ffff;'>gloywoleulas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#7fffd4;'>gloywoleuwyrddlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#00fa9a;'>gloywyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ee82ee;'>gochwynliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#dda0dd;'>goleuborffor</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffe4b5;'>goleuddwn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffe4c4;'>goleuddwngochwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fff8dc;'>goleuddwnwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#cd853f;'>goleuellwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fffacd;'>goleueuron</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffffe0;'>goleufelyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fafad2;'>goleufelynwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#20b2aa;'>goleufycwyrddlwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f08080;'>goleugochwynliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fff5ee;'>goleugwynochwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#778899;'>goleulai</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#add8e6;'>goleulas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#87cefa;'>goleulaswyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#008080;'>goleulaswyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#00ff00;'>goleuloywyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#d3d3d3;'>goleulwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffb6c1;'>goleuorgochwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#cd5c5c;'>goleurudd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffefd5;'>goleuwyngochfelynwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fff0f5;'>goleuwyngochlaswelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffe4e1;'>goleuwyngochwelwliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#90ee90;'>goleuwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f5fffa;'>goleuwyrddwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#faf0e6;'>golewllwchwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff6347;'>golywgoch</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#d8bfd8;'>gorborfforwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffc0cb;'>gorgochwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#1e90ff;'>gorlaslwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#008b8b;'>gorlaswyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff1493;'>gorloywgochwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#00ff7f;'>gorwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffdab9;'>gwefrgochwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ffdead;'>gwefrwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fffff0;'>gwynfelynwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f0f8ff;'>gwynlaswelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff00ff;'>gwynrudd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f0fff0;'>gwynwyrddwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#adff2f;'>gwyrddfelyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#40e0d0;'>gwyrddlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#00ced1;'>gwyrddlasliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#98fb98;'>gwyrddwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#a9a9a9;'>lleilwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#dcdcdc;'>llwydwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#2f4f4f;'>llwytddu</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#a52a2a;'>llwytgoch</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#b8860b;'>llwytgochliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#483d8b;'>llwytlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#4682b4;'>llychlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fdf5e6;'>llychwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fffaf0;'>llychwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fffafa;'>llychwynwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#228b22;'>llychwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#5f9ea0;'>llychwyrddlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:undefined;'>llygwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#9acd32;'>melynwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#8b008b;'>myborffor</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#48d1cc;'>mycgwyrddlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#2e8b57;'>mycwyrddlwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#6b8e23;'>mygddwnwyrdd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#7b68ee;'>myglas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#9400d3;'>mygruddlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#f5f5f5;'>mygwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ba55d3;'>porfforliw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#c71585;'>porfforrudd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#e6e6fa;'>porfforwelw</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff8c00;'>purgochfelyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#fa8072;'>purgochwynrudd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#4169e1;'>purlas</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#3cb371;'>purwyrddlwyd</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff4500;'>rhuddgochfelyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#dc143c;'>rhuddgochwyn</span>
+<span style='font-size:70%;display:inline-block;height:10px;margin:1px;padding:3px;border:1px solid;background-color:#ff00ff;'>rhuddwyn</span>
+<br/><br/><br/><br/>
+<br/><br/><br/><br/>
+</div>
+  
+    <pre>
+*exacting; -liw go- gor- gloyw- pur- -welw marw- erch- goleu- -aidd  *abstracting: -og  *mixture: brith- brych- medlei-   gwyn/white:  du/black:  arian/silver: 
+*llwyd/grey: mwg/dimgrey llwch/slategrey llai/lightslategrey
+*coch/red: rhudd/firebrick gwin/maroon gwinau/saddlebrown
+*cochfelyn/orange: gwefr/darkorange
+*melyn/yellow: helyg/lightyellow ffawliw/cornsilk euronen/lemonchiffon lleb/lemonchiffon
+gwyrdd/green: eho%eg
+*glas/blue: blawr, calch/aquamarine clais/rebeccapurple
+*glasgoch/purple: porffor/purple piws/mediumpurple clais/indigo eho%eg
+*cochlwyd/brown: llyg/burlywood(mousey) dwn/tan(beige) gell/chocolate(chestnut) cethin/goldenrod(roan) cedw/beige(yellow-beige) gwrm/sienna/gwrwm(grullo-velvety bluey grey horse)
+-lliw -og go- gor- gloyw- brith- brych-
+ medlei- pur- -welw marw- erch- goleu- -aidd
+
+    </pre>
+</details>
+
+<details style='font-size:40%;'>
+  <summary>Enwau lliwiau  </summary>
+  
+
+<span style='background-color:#000000 ;'>black/du:  </span>
+<span style='background-color:#000080 ;'>navy:  </span>
+<span style='background-color:#00008b ;'>darkblue:  </span>
+<span style='background-color:#0000cd ;'>mediumblue:  </span>
+<span style='background-color:#0000ff ;'>blue/glas:  </span>
+<span style='background-color:#006400 ;'>darkgreen:  </span>
+<span style='background-color:#008000 ;'>green/gwyrdd:  </span>
+<span style='background-color:#008080 ;'>teal:  </span>
+<span style='background-color:#008b8b ;'>darkcyan:  </span>
+<span style='background-color:#00bfff ;'>deepskyblue:  </span>
+<span style='background-color:#00ced1 ;'>darkturquoise:  </span>
+<span style='background-color:#00fa9a ;'>mediumspringgreen:  </span>
+<span style='background-color:#00ff00 ;'>lime:  </span>
+<span style='background-color:#00ff7f ;'>springgreen:  </span>
+<span style='background-color:#00ffff ;'>aqua/gloywoleulas:  </span>
+<span style='background-color:#00ffff ;'>aqua:  </span>
+<span style='background-color:#00ffff ;'>cyan:  </span>
+<span style='background-color:#191970 ;'>midnightblue:  </span>
+<span style='background-color:#1e90ff ;'>dodgerblue:  </span>
+<span style='background-color:#20b2aa ;'>lightseagreen:  </span>
+<span style='background-color:#228b22 ;'>forestgreen:  </span>
+<span style='background-color:#2e8b57 ;'>seagreen:  </span>
+<span style='background-color:#2f4f4f ;'>darkslategray:  </span>
+<span style='background-color:#2f4f4f ;'>darkslategrey:  </span>
+<span style='background-color:#32cd32 ;'>limegreen:  </span>
+<span style='background-color:#3cb371 ;'>mediumseagreen:  </span>
+<span style='background-color:#40e0d0 ;'>turquoise:  </span>
+<span style='background-color:#4169e1 ;'>royalblue:  </span>
+<span style='background-color:#4682b4 ;'>steelblue:  </span>
+<span style='background-color:#483d8b ;'>darkslateblue:  </span>
+<span style='background-color:#48d1cc ;'>mediumturquoise:  </span>
+<span style='background-color:#4b0082 ;'>indigo:  </span>
+<span style='background-color:#556b2f ;'>darkolivegreen:  </span>
+<span style='background-color:#5f9ea0 ;'>cadetblue:  </span>
+<span style='background-color:#6495ed ;'>cornflowerblue:  </span>
+<span style='background-color:#663399 ;'>rebeccapurple:  </span>
+<span style='background-color:#66cdaa ;'>mediumaquamarine:  </span>
+<span style='background-color:#696969 ;'>dimgray:  </span>
+<span style='background-color:#696969 ;'>dimgrey:  </span>
+<span style='background-color:#6a5acd ;'>slateblue:  </span>
+<span style='background-color:#6b8e23 ;'>olivedrab:  </span>
+<span style='background-color:#708090 ;'>slategray:  </span>
+<span style='background-color:#708090 ;'>slategrey:  </span>
+<span style='background-color:#778899 ;'>lightslategray:  </span>
+<span style='background-color:#778899 ;'>lightslategrey:  </span>
+<span style='background-color:#7b68ee ;'>mediumslateblue:  </span>
+<span style='background-color:#7cfc00 ;'>lawngreen:  </span>
+<span style='background-color:#7fff00 ;'>chartreuse:  </span>
+<span style='background-color:#7fffd4 ;'>aquamarine/gloywoleuwyrddlas:  </span>
+<span style='background-color:#800000 ;'>maroon:  </span>
+<span style='background-color:#800080 ;'>purple/porffor/cochlas:  </span>
+<span style='background-color:#808000 ;'>olive:  </span>
+<span style='background-color:#808080 ;'>gray/llwyd:  </span>
+<span style='background-color:#808080 ;'>gray/llwyd:  </span>
+<span style='background-color:#808080 ;'>grey/llwyd:  </span>
+<span style='background-color:#87ceeb ;'>skyblue:  </span>
+<span style='background-color:#87cefa ;'>lightskyblue:  </span>
+<span style='background-color:#8a2be2 ;'>blueviolet:  </span>
+<span style='background-color:#8b0000 ;'>darkred:  </span>
+<span style='background-color:#8b008b ;'>darkmagenta:  </span>
+<span style='background-color:#8b4513 ;'>saddlebrown:  </span>
+<span style='background-color:#8fbc8f ;'>darkseagreen:  </span>
+<span style='background-color:#90ee90 ;'>lightgreen:  </span>
+<span style='background-color:#9370db ;'>mediumpurple:  </span>
+<span style='background-color:#9400d3 ;'>darkviolet:  </span>
+<span style='background-color:#98fb98 ;'>palegreen:  </span>
+<span style='background-color:#9932cc ;'>darkorchid:  </span>
+<span style='background-color:#9acd32 ;'>yellowgreen:  </span>
+<span style='background-color:#a0522d ;'>sienna:  </span>
+<span style='background-color:#a52a2a ;'>brown:  </span>
+<span style='background-color:#a9a9a9 ;'>darkgray:  </span>
+<span style='background-color:#a9a9a9 ;'>darkgrey:  </span>
+<span style='background-color:#add8e6 ;'>lightblue:  </span>
+<span style='background-color:#adff2f ;'>greenyellow:  </span>
+<span style='background-color:#afeeee ;'>paleturquoise:  </span>
+<span style='background-color:#b0c4de ;'>lightsteelblue:  </span>
+<span style='background-color:#b0e0e6 ;'>powderblue:  </span>
+<span style='background-color:#b22222 ;'>firebrick:  </span>
+<span style='background-color:#b8860b ;'>darkgoldenrod:  </span>
+<span style='background-color:#ba55d3 ;'>mediumorchid:  </span>
+<span style='background-color:#bc8f8f ;'>rosybrown:  </span>
+<span style='background-color:#bdb76b ;'>darkkhaki:  </span>
+<span style='background-color:#c0c0c0 ;'>silver/arian:  </span>
+<span style='background-color:#c71585 ;'>mediumvioletred:  </span>
+<span style='background-color:#cd5c5c ;'>indianred:  </span>
+<span style='background-color:#cd853f ;'>peru:  </span>
+<span style='background-color:#d2691e ;'>chocolate:  </span>
+<span style='background-color:#d2b48c ;'>tan:  </span>
+<span style='background-color:#d3d3d3 ;'>lightgray:  </span>
+<span style='background-color:#d3d3d3 ;'>lightgrey:  </span>
+<span style='background-color:#d8bfd8 ;'>thistle:  </span>
+<span style='background-color:#da70d6 ;'>orchid:  </span>
+<span style='background-color:#daa520 ;'>goldenrod:  </span>
+<span style='background-color:#db7093 ;'>palevioletred:  </span>
+<span style='background-color:#dc143c ;'>crimson:  </span>
+<span style='background-color:#dcdcdc ;'>gainsboro:  </span>
+<span style='background-color:#dda0dd ;'>plum:  </span>
+<span style='background-color:#deb887 ;'>burlywood:  </span>
+<span style='background-color:#e0ffff ;'>lightcyan:  </span>
+<span style='background-color:#e6e6fa ;'>lavender:  </span>
+<span style='background-color:#e9967a ;'>darksalmon:  </span>
+<span style='background-color:#ee82ee ;'>violet:  </span>
+<span style='background-color:#eee8aa ;'>palegoldenrod:  </span>
+<span style='background-color:#f08080 ;'>lightcoral:  </span>
+<span style='background-color:#f0e68c ;'>khaki:  </span>
+<span style='background-color:#f0f8ff ;'>aliceblue/gwynlaswelw:  </span>
+<span style='background-color:#f0fff0 ;'>honeydew:  </span>
+<span style='background-color:#f0ffff ;'>azure/glaswynwelw:  </span>
+<span style='background-color:#f4a460 ;'>sandybrown:  </span>
+<span style='background-color:#f5deb3 ;'>wheat:  </span>
+<span style='background-color:#f5f5dc ;'>beige:  </span>
+<span style='background-color:#f5f5f5 ;'>whitesmoke:  </span>
+<span style='background-color:#f5fffa ;'>mintcream:  </span>
+<span style='background-color:#f8f8ff ;'>ghostwhite:  </span>
+<span style='background-color:#fa8072 ;'>salmon:  </span>
+<span style='background-color:#faebd7 ;'>antiquewhite/llygwyn:  </span>
+<span style='background-color:#faf0e6 ;'>linen:  </span>
+<span style='background-color:#fafad2 ;'>lightgoldenrodyellow:  </span>
+<span style='background-color:#fdf5e6 ;'>oldlace:  </span>
+<span style='background-color:#ff0000 ;'>red/coch:  </span>
+<span style='background-color:#ff00ff ;'>fuchsia:  </span>
+<span style='background-color:#ff00ff ;'>fuchsia:  </span>
+<span style='background-color:#ff00ff ;'>magenta:  </span>
+<span style='background-color:#ff1493 ;'>deeppink:  </span>
+<span style='background-color:#ff4500 ;'>orangered:  </span>
+<span style='background-color:#ff6347 ;'>tomato:  </span>
+<span style='background-color:#ff69b4 ;'>hotpink:  </span>
+<span style='background-color:#ff7f50 ;'>coral:  </span>
+<span style='background-color:#ff8c00 ;'>darkorange:  </span>
+<span style='background-color:#ffa07a ;'>lightsalmon:  </span>
+<span style='background-color:#ffa500 ;'>orange/cochfelyn:  </span>
+<span style='background-color:#ffb6c1 ;'>lightpink:  </span>
+<span style='background-color:#ffc0cb ;'>pink:  </span>
+<span style='background-color:#ffd700 ;'>gold/aur:  </span>
+<span style='background-color:#ffdab9 ;'>peachpuff:  </span>
+<span style='background-color:#ffdead ;'>navajowhite:  </span>
+<span style='background-color:#ffe4b5 ;'>moccasin:  </span>
+<span style='background-color:#ffe4c4 ;'>bisque:  </span>
+<span style='background-color:#ffe4e1 ;'>mistyrose:  </span>
+<span style='background-color:#ffebcd ;'>blanchedalmond:  </span>
+<span style='background-color:#ffefd5 ;'>papayawhip:  </span>
+<span style='background-color:#fff0f5 ;'>lavenderblush:  </span>
+<span style='background-color:#fff5ee ;'>seashell:  </span>
+<span style='background-color:#fff8dc ;'>cornsilk:  </span>
+<span style='background-color:#fffacd ;'>lemonchiffon:  </span>
+<span style='background-color:#fffaf0 ;'>floralwhite:  </span>
+<span style='background-color:#fffafa ;'>snow:  </span>
+<span style='background-color:#ffff00 ;'>yellow/melyn:  </span>
+<span style='background-color:#ffffe0 ;'>lightyellow:  </span>
+<span style='background-color:#fffff0 ;'>ivory:  </span>
+<span style='background-color:#ffffff ;'>white/gwyn:  </span>
+ 
+ 
+</details>
+
 <select id='selfiles' onchange='selfile();'>
 </select>
-<span id='spstatus' style='color:blue;'></span>
+<button class='btndict' id='btrdict' onclick='dict("2cy");'>Dict2CY</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>Dict2EN</button>
+<button class='btndict' id='btrdict' onclick='cleandict("finddups");'>FindDups</button>
+<button class='btndict' id='btrdict' onclick='cleandict("newdict");'>NewDict</button>
+<button class='btndict' id='btrdict' onclick='foreachba();'>ForEachB[A]</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
+
 <br/>
 <!-- ================================= -->
-<textarea id='tx1' style='xmargin-top:-10px;resize:none;overflow-y:auto;width:92%;max-height:70px;height:70px;
+<details> <!--!!-->
+  <summary>Hanfodrenciau:
+  <span id='spstatus' style='color:blue;'></span>
+  </summary> 
+ <pre style='font-family:Times new roman;padding:0px;margin:0px;font-size:70%;'>
+*<00uff>uffern; <01ang>anghenfil; <02drd>dirdynniad; <03cfl>cyfeiliorn; <04trs>tristwch; 
+*<10iln>ilion; <11mil>milion;
+*20traed
+*30esgidiau
+*40caethwas
+*50daeargell;51rhagneuadd;52ystafell-byw;53astudfa;54amrodfa;55ystafell-cinio;56cegin;57ystafell-ymolchi;58ystafell-gwely;59llofft;
+*60carthffos;61ystryd;62tai;63gerddi;64siopau;65fatrioedd;66swyddfeydd;67plocynnau;68tyrrau;69gwerni;
+*70morwely 
+  </pre>
+</details>
+<!-- ================================= -->
+  
+  
+
+<table width='96%'>
+<tr>
+<td width='80%' valign='top'>
+<textarea id='tx1' style='xmargin-top:-10px;resize:none;overflow-y:auto;width:96%;max-height:70px;height:70px;
   -webkit-overflow-scrolling: touch;'></textarea>
+</td>
+<td width='20%' valign='top'>
+<textarea id='tx1a' style='xmargin-top:-10px;resize:none;overflow-y:auto;width:96%;max-height:70px;height:70px;
+  -webkit-overflow-scrolling: touch;'></textarea>
+</td>
+</tr>
+</table>
+  
+  
+  
 <div style='margin-top:-4px;margin-bottom:-4px;'>
 <button id='btrgxrpl' onclick='rgxreplace();'>Rgx Replace</button>
 <button id='btsort' onclick='sorttext();'>Sort</button>
@@ -39,44 +401,36 @@ github.com/ianlow27/dictcyhtml
 <button id='btnrnmfile' onclick='renamefile();'>Rename File</button>
 <button id='btdelfile' onclick='delfile();'>Delete File</button>
 </div>
+
+
+
 <table width='96%'>
 <tr>
-<td width='60%' valign='top'>
-<textarea id='tx2' class='btndict' style='width:92%;height:70px;'></textarea>
-<textarea id='tx3' style='width:92%;height:50px;'></textarea>
+<td width='65%' valign='top'>
+<textarea id='tx2' class='btndict' style='width:96%;height:70px;'></textarea>
+<textarea id='tx3' style='background-color:#eeffee;width:96%;height:70px;'></textarea>
 </td>
-<td width='40%' valign='top'>
-<textarea id='tx4' style='width:92%;height:70px;'></textarea>
-<textarea id='tx5' style='width:92%;height:50px;'></textarea>
+<td width='35%' valign='top'>
+<textarea id='tx4' style='font-size:80%;width:96%;height:70px;'></textarea>
+<textarea id='tx5' style='width:96%;height:35px;'></textarea>
+<textarea id='tx6' style='width:96%;height:20px;'></textarea>
 </td>
 </tr>
 </table>
 
 <!-- ================================= -->
 <div style='margin-top:-7px;margin-bottom:-6px;'> 
-<button class='btndict' id='btrdict' onclick='dict("2cy");'>Dict2CY</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>Dict2EN</button>
-<button class='btndict' id='btrdict' onclick='cleandict("finddups");'>FindDups</button>
-<button class='btndict' id='btrdict' onclick='cleandict("newdict");'>NewDict</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
 
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
-<button class='btndict' id='btrdict' onclick='dict("2en");'>?</button>
 </div>
 
 <pre id='pr1'><pre>
 
 <script src='./dictcy.js'></script>
 <script src='./correctns.js'></script>
+<script src='./newvocab.js'></script>
 <script>
 
-alert(acorrectns.length);
-alert(adictcy.length);
+//alert(acorrectns.length);
 resize2device();
 //localStorage.removeItem(appref+'_new4');
 //localStorage.setItem(appref+'_currfile','new1');
@@ -86,10 +440,12 @@ let bautosave=true;
 let fname=localStorage.getItem(appref+'_currfile');
 //alert(fname);
 const tx1=document.getElementById('tx1');
+const tx1a=document.getElementById('tx1a');
 const tx2=document.getElementById('tx2');
 const tx3=document.getElementById('tx3');
 const tx4=document.getElementById('tx4');
 const tx5=document.getElementById('tx5');
+const tx6=document.getElementById('tx6');
 const pr1=document.getElementById('pr1');
 const spstatus=document.getElementById('spstatus');
 const selfiles=document.getElementById('selfiles');
@@ -99,12 +455,14 @@ restoretext();
 }catch(e){
   alert(e.message);
 }
+tx1a.value=localStorage.getItem(appref+'_tx1a');
 tx2.value=localStorage.getItem(appref+'_tx2');
 tx3.value=localStorage.getItem(appref+'_tx3');
 tx4.value=localStorage.getItem(appref+'_tx4');
 tx5.value=localStorage.getItem(appref+'_tx5');
-setInterval('savetext();', 3*20*1000);
-cleandict('newdict','onload');
+tx6.value=localStorage.getItem(appref+'_tx6');
+//setInterval('savetext();', 3*20*1000);
+if(bcleandictonload)cleandict('newdict','onload');
 //-------------------------------------------
 function runmsg(popt){
   const dtnow = new Date();
@@ -114,42 +472,80 @@ function runmsg(popt){
 function dict(popt){//!!
 runmsg('started');
 localStorage.setItem(appref+'_tx1', tx1.value);
+localStorage.setItem(appref+'_tx1a', tx1a.value);
 localStorage.setItem(appref+'_tx2', tx2.value);
 localStorage.setItem(appref+'_tx3', tx3.value);
 localStorage.setItem(appref+'_tx4', tx4.value);
 localStorage.setItem(appref+'_tx5', tx5.value);
+localStorage.setItem(appref+'_tx6', tx6.value);
 let strout='';
+let addvcb='';
+let addvcb2='';
 if(tx1.value.length > 2000){
   runmsg('stopped');
   alert('tx1 is too large!');
   return;
 }
-const awords=tx1.value.split(/\s/);
+
+const alines=tx1.value.split(/\n/);
 let colsrc=1;
 let coltgt=2;
   if(popt=='2en'){
     colsrc=2;
     coltgt=1;
   }
+for(h in alines){
+  if(alines[h].trim().substr(0,2)=='//') continue;
+  const awords=alines[h].split(/\s/);
   for(i in awords){
+    if(!awords[i].trim()) continue;
     //alert(awords[i]);
     //const rgx=RegExp("/\|"+awords[i]+"\|/");
-    strout+=' '+awords[i];
+    //if(strout!='') strout+='; ';
+    strout+='<<'+awords[i]+'>>';
     let fndwds='';
+    let prevtgt='';
+    let tgts='|';
     for(j in adictcy){
       const atmp1=adictcy[j].split(/\|/);
       if(atmp1[colsrc]==awords[i]){
-        if(fndwds=='') fndwds+='=';
-        else fndwds+='/';
-        fndwds+=''+atmp1[coltgt]+'('+atmp1[3]+')';//!! alert(atmp1[1]+'____'+awords[i]+'___'+adictcy[j]);
+       let rgx=RegExp('/\|'+atmp1[coltgt]+'\|/');
+       if((atmp1[coltgt]!=prevtgt) &&
+          (!String(tgts).match(rgx))  ){
+        if(fndwds=='') fndwds+=' = ';
+        else fndwds+=' / ';
+        fndwds+=''+atmp1[coltgt]+'('+atmp1[3]+')';
+        prevtgt=atmp1[coltgt];
+        tgts+=atmp1[coltgt]+'|';
+        //alert(prevtgt+'___'+atmp1[coltgt]);
+       }//endif
       }else {
-             // strout+=' ';
-      }
+      }//endif
     }//endfor
-    strout+=fndwds;
+    if(awords[i].match(/[a-z]+/)){
+      if(fndwds==''){
+        let addcy='??';
+        let adden='??';
+        if(popt=='2en'){
+          addcy=awords[i];
+        }else {
+          adden=awords[i];          
+        }
+        fndwds+='=XXX';
+        addvcb+=
+          "\"*|"+adden+"|"+addcy+"|??| | | | | #+\",\n";
+        addvcb2+="\"*|"+adden+"=?/?=?\",\n";
+      }
+      fndwds+=';';
+    }
+    strout+=fndwds+' ';
   }//endfor
+}//endfor
  tx2.value= strout;
+ tx4.value= addvcb;
+ tx5.value= addvcb2;
  localStorage.setItem(appref+'_tx2', tx2.value);
+ localStorage.setItem(appref+'_tx5', tx5.value);
  runmsg('completed');
 }//endfunc
 //-------------------------------------------
@@ -184,7 +580,7 @@ let adict2=Array();
   for(let i in adictcy){
     count++;
     if(!(count%10000)){
-      alert(count+' of '+adictcy.length);
+      //alert(count+' of '+adictcy.length);
       //if(count>10000) break;
     }
     if(popt=='finddups'){
@@ -248,7 +644,7 @@ let adict2=Array();
   }else if(popt=='newdict'){
     strout+='""];\n';
     strout+='const dictcyjs_loaded=true;\n';
-    strout+='if(dictcyjs_loaded){ console.log(dictcyjs["54433"]);\n';
+    strout+='if(dictcyjs_loaded){ console.log(dictcyjs["1000"]);\n';
     strout+='}\n';
    // pr1.innerHTML=strout;
     //alert(strout.substr(0,10));
@@ -450,22 +846,48 @@ function rgxreplace(){
 //(\d\d)\sJan\s(\d\d\d\d)%%%$2-01-$1###(\d\d)\sFeb\s(\d\d\d\d)%%%$2-02-$1###(\d\d)\sMar\s(\d\d\d\d)%%%$2-03-$1###(\d\d)\sApr\s(\d\d\d\d)%%%$2-04-$1
 //(\d\d)\sMay\s(\d\d\d\d)%%%$2-05-$1###(\d\d)\sJun\s(\d\d\d\d)%%%$2-06-$1###(\d\d)\sJul\s(\d\d\d\d)%%%$2-07-$1###(\d\d)\sAug\s(\d\d\d\d)%%%$2-08-$1
 //(\d\d)\sSep\s(\d\d\d\d)%%%$2-09-$1###(\d\d)\sOct\s(\d\d\d\d)%%%$2-10-$1###(\d\d)\sNov\s(\d\d\d\d)%%%$2-11-$1###(\d\d)\sDec\s(\d\d\d\d)%%%$2-12-$1
-  const lrgx = prompt('Please enter your regex match and replace patterns separated by a triple percentage sign (%%%) and different multiple replacements by a triple hash (###): ');
+  const lrgx = prompt('Please enter your regex match and replace patterns separated by a triple percentage sign (%%%), modifiers, if any, preceded by a triple pipe (|||), and different multiple replacements by a triple hash (###): ');
 //alert(lrgx);
   if(lrgx == null) return -1;
-alines = lrgx.split(/###/);
+const alines = lrgx.split(/###/);
 for(i in alines){
   alines[i] = alines[i].trim();
-  argx = alines[i].split(/%%%/);
+  const argx = alines[i].split(/%%%/);
   if(typeof argx[1] == 'undefined') return -1;
-  lrepl = argx[1];
+  const atmp1=argx[1].split(/\|\|\|/);
+  let mod1='mg';
+  if(typeof atmp1[1]!='undefined'){
+    mod1=atmp1[1];
+  }
   let str1 = tx1.value;
-  const rgx = new RegExp(argx[0], 'mg');
-  tx1.value = str1.replace(rgx, argx[1]);
+  const rgx = new RegExp(''+argx[0]+'', mod1);
+  tx1.value = str1.replace(rgx, atmp1[0]);
 }//endfor
 }//endfunc
 //-------------------------------------------
-//endfunc
+function foreachba(){
+const alines=tx1.value.split(/\n/);
+let aA=Array();
+let aB=Array();
+let stg='';
+for(let i in alines){
+  alines[i]=alines[i].trim();
+  if(!alines[i]) continue;
+  else if(alines[i]=='[A]='){ stg='A'; continue;}
+  else if(alines[i]=='[B]='){ stg='B'; continue;}
+  const atmp1=alines[i].split(/\//);
+  if(stg=='A'){
+    aA[atmp1[0]]=atmp1[1];
+  }else if(stg=='B'){
+    aB[atmp1[0]]=atmp1[1];
+  }
+}//endfor
+strout='';
+for(let i in aA){
+  strout+="<span style='display:inline-block;height:14px;margin:1px;padding:3px;border:1px solid;background-color:"+aB[aA[i]]+";'>"+i+"</span>\n";
+}//endfor
+tx2.value=strout;
+}//endfunc
 //-------------------------------------------
 //endfunc
 //-------------------------------------------
